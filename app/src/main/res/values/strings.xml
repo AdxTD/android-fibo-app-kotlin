@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FiboApp</string>
+    <string name="status_ready">Ready to calculate Fibonacci!</string>
+    <string name="status_calculating">Calculating fib numbers:</string>
+    <string name="et_hint">Input fibo number here - limit is f(92)</string>
+    <string name="btn_request">Request</string>
+</resources>
