@@ -26,7 +26,7 @@ interface FiboDao {
     @Insert
     suspend fun addFiboRequest(request: FiboRequest)
 
-    @Query("SELECT * FROM fibo_number ORDER BY id DESC LIMIT 0, 1")
+    @Query("SELECT * FROM fibo_number ORDER BY id DESC LIMIT 2")
     suspend fun getLastTwoFiboNumbers(): List<FiboNumber>
 
     @Query("SELECT * FROM fibo_request WHERE fibo_number = :number ORDER BY id DESC LIMIT 1")

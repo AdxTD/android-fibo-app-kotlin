@@ -41,6 +41,7 @@ class FiboRequestsViewModel(private val application: FiboApplication): ViewModel
                     lastMinusOneFiboValue = it.last().fiboValue // the small one, f(n-1)
                     log(
                         "FiboRequestsViewModel fiboNumbers NOT Empty - lastCalculated= $lastCalculated"
+                            +" - lastFiboValue=$lastFiboValue - lastMinusOneFiboValue=$lastMinusOneFiboValue"
                     )
                 }
             }
