@@ -29,4 +29,17 @@ _Possible improvements: implementing details screen which can be used to show mu
 * **Unit tests** are implemented in the androidTest folder to verify the main and most important database operations in the DAO class
 * **Repository pattern** is used in the project - despite the absence of other data sources but it is still useful to decouple / seperate the data layer form viewModels, e.g. in case we want to change the type of database used or in case we added a new datasource to the project ... etc.
 * Minified is enabled for both debug and release version, obfuscation won't effect the app logic nor the database - and we get smaller size apk
-* **Important - Gradle vars:** please check the variables values available in the project build.gradle file, values like gradle plugin version, target SDK and compile SDK version can be changed here to be suitable to your enviroment before the build  
+* **Important - Gradle vars:** please check the variables values available in the project build.gradle file, values like gradle plugin version, target SDK and compile SDK version can be changed here to be suitable to your enviroment before the build    
+   
+   
+   
+** Improvements tasks:
+
+1- notify the recycler view (either when a previous request happen - or - when a new item added) - on progress
+2- move current main screen into a new fragment (main activity should only hold navigation functionality)
+3- create navigation plus a new empty fragment to navigate to when item on clicked
+4- in the new fragment: use same adapter but publishing data from different db method, this one should contain all requests within chosen date
+5- add a switch into main fragment to enable / disable multi requests on same number
+6- add some beautiful splash screen to welcome the user! :D
+7- provide more unit tests to cover all data access functionalities 
+8- provide turn off log mechanism 

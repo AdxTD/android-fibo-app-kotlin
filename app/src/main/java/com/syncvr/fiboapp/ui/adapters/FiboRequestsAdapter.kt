@@ -53,4 +53,9 @@ class FiboRequestsAdapter : ListAdapter<JoinedFiboRequestsNumbers, FiboRequestsA
         }
     }
 
+    fun checkItemExistence(number :Int) :Boolean {
+        val fiboNumber = this.currentList.find { it.fiboNumber == number }
+        return fiboNumber != null
+    }
+
 }
