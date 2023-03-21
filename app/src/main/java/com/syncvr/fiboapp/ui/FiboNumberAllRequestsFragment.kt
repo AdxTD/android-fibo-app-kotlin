@@ -43,6 +43,7 @@ class FiboNumberAllRequestsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.tvReadyHeader.text = getString(R.string.status_showing_requests_4number,fiboNumberIndex)
         viewModel = FiboRequestsViewModelFactory(
             context?.applicationContext as FiboApplication
         ).create(FiboRequestsViewModel::class.java)

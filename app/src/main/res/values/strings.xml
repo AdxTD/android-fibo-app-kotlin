@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">FiboApp</string>
+    <string name="fragment_fibo_requests">Fibonacci Requests List</string>
+    <string name="fragment_all_fibo_number_requests">Fibonacci Number All Requests</string>
     <string name="status_ready">Ready to calculate Fibonacci!</string>
+    <string name="status_showing_requests_4number">Showing all requests for fibonacci number %d</string>
     <string name="status_calculating">Calculating fib numbers:</string>
     <string name="et_hint">Input fibo number here - limit is f(92)</string>
     <string name="btn_request">Request</string>

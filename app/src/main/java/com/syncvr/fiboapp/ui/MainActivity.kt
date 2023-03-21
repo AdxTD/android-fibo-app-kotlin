@@ -3,13 +3,12 @@ package com.syncvr.fiboapp.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.syncvr.fiboapp.R
 import com.syncvr.fiboapp.databinding.ActivityFiboRequestsBinding
 
-class FiboRequestsActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFiboRequestsBinding
     private lateinit var navController: NavController

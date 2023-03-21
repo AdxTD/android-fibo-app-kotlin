@@ -48,10 +48,11 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:visibility="invisible"
         android:id="@+id/btn_back"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
         android:gravity="center"
         android:text="@string/btn_back"
         android:textColor="@color/white"
