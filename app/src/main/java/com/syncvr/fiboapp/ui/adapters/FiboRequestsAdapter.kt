@@ -12,7 +12,7 @@ import com.syncvr.fiboapp.databinding.ItemFiboRequestBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class FiboRequestsAdapter : ListAdapter<JoinedFiboRequestsNumbers, FiboRequestsAdapter.FiboRequestViewHolder>(DiffCallback) {
+class FiboRequestsAdapter(private val onItemClicked: (JoinedFiboRequestsNumbers) -> Unit) : ListAdapter<JoinedFiboRequestsNumbers, FiboRequestsAdapter.FiboRequestViewHolder>(DiffCallback) {
 
     class FiboRequestViewHolder (private var binding: ItemFiboRequestBinding): RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SimpleDateFormat")
@@ -20,21 +20,22 @@ class FiboRequestsAdapter : ListAdapter<JoinedFiboRequestsNumbers, FiboRequestsA
             val fiboNumText = "f(${fiboRequest.fiboNumber})= ${fiboRequest.fiboValue}"
             binding.tvFiboNumber.text = fiboNumText
             binding.tvRequestDate.text = fiboRequest.requestDate
-//            binding.tvRequestDate.text = SimpleDateFormat(
-//                "h:mm a").format(
-//                Date(fiboRequest.requestDate.toLong() * 1000)
-//            )
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FiboRequestViewHolder {
-        return FiboRequestViewHolder(
+        val viewHolder =  FiboRequestViewHolder(
             ItemFiboRequestBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
         )
+        viewHolder.itemView.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            onItemClicked(getItem(position))
+        }
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: FiboRequestViewHolder, position: Int) {

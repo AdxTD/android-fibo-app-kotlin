@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fiboRequestsFragment">
+
+    <fragment
+        android:id="@+id/fiboRequestsFragment"
+        android:name="com.syncvr.fiboapp.ui.FiboRequestsFragment"
+        android:label="FiboRequestsFragment" >
+        <action
+            android:id="@+id/action_fiboRequestsFragment_to_fiboNumberAllRequestsFragment"
+            app:destination="@id/fiboNumberAllRequestsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fiboNumberAllRequestsFragment"
+        android:name="com.syncvr.fiboapp.ui.FiboNumberAllRequestsFragment"
+        android:label="FiboNumberAllRequestsFragment" >
+        <argument
+            android:name="fiboNumberIndex"
+            app:argType="integer" />
+    </fragment>
+</navigation>

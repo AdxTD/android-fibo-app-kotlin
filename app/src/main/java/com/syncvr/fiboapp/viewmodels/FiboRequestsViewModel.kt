@@ -52,6 +52,9 @@ class FiboRequestsViewModel(application: FiboApplication) : ViewModel() {
         return fiboRepository.getJoinedFiboRequestsNumbers()
     }
 
+    suspend fun getAllRequestsForFiboNumber(index:Int): Flow<List<JoinedFiboRequestsNumbers>>{
+        return fiboRepository.getAllRequestsForFiboNumber(index)
+    }
 
     fun addRequest(request: FiboRequest) = viewModelScope.launch {
         if (request.fiboNumber <= lastCalculated) { // means fibo number had already been calculated

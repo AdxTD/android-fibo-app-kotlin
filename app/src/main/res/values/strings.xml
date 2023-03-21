@@ -4,4 +4,5 @@
     <string name="status_calculating">Calculating fib numbers:</string>
     <string name="et_hint">Input fibo number here - limit is f(92)</string>
     <string name="btn_request">Request</string>
+    <string name="btn_back">BACK</string>
 </resources>

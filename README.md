@@ -37,7 +37,7 @@ _Possible improvements: implementing details screen which can be used to show mu
 
 1- notify the recycler view (either when a previous request happen - or - when a new item added) - on progress.   
 2- move current main screen into a new fragment (main activity should only hold navigation functionality).   
-3- create navigation plus a new empty fragment to navigate to when item on clicked.    
+3- create navigation plus a new empty fragment to navigate to when item on clicked. (Use base fragment for shared functionalities between fragments)           
 4- in the new fragment: use same adapter but publishing data from different db method, this one should contain all requests within chosen date.    
 5- add a switch into main fragment to enable / disable multi requests on same number.    
 6- add some beautiful splash screen to welcome the user! :D.    

@@ -1,5 +1,6 @@
 package com.syncvr.fiboapp.repository
 
+import androidx.room.Index
 import com.syncvr.fiboapp.database.FiboDatabase
 import com.syncvr.fiboapp.database.entities.FiboNumber
 import com.syncvr.fiboapp.database.entities.FiboRequest
@@ -46,6 +47,11 @@ class FiboRepository(private val database: FiboDatabase) {
         }
     }
 
+    suspend fun getAllRequestsForFiboNumber(index: Int): Flow<List<JoinedFiboRequestsNumbers>> {
+        return withContext(Dispatchers.IO) {
+            database.getFiboDao().getAllJoinedFiboRequestsNumbersForFiboNumber(index)
+        }
+    }
 
 
 }

@@ -17,6 +17,11 @@ interface FiboDao {
     )
     fun getJoinedFiboRequestsNumbers(): Flow<List<JoinedFiboRequestsNumbers>>
 
+    @Query("SELECT fibo_number.id AS fiboNumber, fibo_number.value AS fiboValue, fibo_request.date AS requestDate "+
+            "FROM fibo_request INNER JOIN fibo_number ON fibo_number.id=fibo_request.fibo_number WHERE fibo_number.id = :number ORDER BY fibo_request.id ASC"
+    )
+    fun getAllJoinedFiboRequestsNumbersForFiboNumber(number:Int): Flow<List<JoinedFiboRequestsNumbers>>
+
     @Insert
     suspend fun addFiboNumber(fiboNumber: FiboNumber)
 
