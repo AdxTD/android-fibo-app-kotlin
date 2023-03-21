@@ -8,32 +8,22 @@
     android:background="@color/off_white"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_ready_header"
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_allow_multiple"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_margin="16dp"
+        android:padding="8dp"
         android:text="@string/status_ready"
+        android:paddingTop="@dimen/item_fibo_request_vertical_padding"
         android:textColor="@color/teal_700"
         android:textSize="16sp"
         android:gravity="start"
-        android:padding="8dp"
         app:layout_constraintWidth_percent="0.9"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tv_fibo_requests_header"
-        app:layout_constraintEnd_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv_fibo_requests_header"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:gravity="start"
-        android:padding="8dp"
-        app:layout_constraintWidth_percent="0.1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_ready_header"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -44,7 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/et_fibo_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_ready_header" />
+        app:layout_constraintTop_toBottomOf="@id/switch_allow_multiple" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_fibo_layout"

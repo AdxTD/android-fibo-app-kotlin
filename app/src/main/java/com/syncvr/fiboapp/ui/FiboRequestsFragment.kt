@@ -23,10 +23,10 @@ class FiboRequestsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: FiboRequestsViewModel
+    private lateinit var recyclerView: RecyclerView
 
     private val maxFiboNumberAllowed = 92
 
-    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,9 +46,7 @@ class FiboRequestsFragment : Fragment() {
             context?.applicationContext as FiboApplication
         ).create(FiboRequestsViewModel::class.java)
 
-        binding.btnRequest.setOnClickListener {
-            btnRequestClicked()
-        }
+        binding.btnRequest.setOnClickListener { btnRequestClicked() }
 
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -83,7 +81,7 @@ class FiboRequestsFragment : Fragment() {
                             " been requested and calculated"
                 )
                 recyclerView.scrollToPosition((recyclerView.adapter as FiboRequestsAdapter).itemCount - 1)
-                return
+                if(!binding.switchAllowMultiple.isChecked) return
             }
 
             // limits of fibonacci numbers in long value is f(92), any request with larger value will be rejected
