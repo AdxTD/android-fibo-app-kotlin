@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">FiboApp</string>
+    <string name="splash_tv_welcome">Welcome to SyncVR Fibonacci Application</string>
     <string name="fragment_fibo_requests">Fibonacci Requests List</string>
     <string name="fragment_all_fibo_number_requests">Fibonacci Number All Requests</string>
     <string name="status_ready">Allow multiple requests for same number?</string>

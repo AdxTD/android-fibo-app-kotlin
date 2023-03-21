@@ -40,6 +40,7 @@ _Possible improvements: implementing details screen which can be used to show mu
 3- create navigation plus a new empty fragment to navigate to when item on clicked. (Use base fragment for shared functionalities between fragments)  - DONE               
 4- in the new fragment: use same adapter but publishing data from different db method, this one should contain all requests within chosen date  - DONE    
 5- add a switch into main fragment to enable / disable multi requests on same number  - DONE      
-6- add some beautiful splash screen to welcome the user! :D.    
+6- add some beautiful splash screen to welcome the user!   - DONE       
 7- provide more unit tests to cover all data access functionalities.     
-8- provide turn off log mechanism.        
+8- provide turn off log mechanism.    
+9- Update the readme file with all improvements
