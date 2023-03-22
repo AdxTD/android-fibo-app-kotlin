@@ -8,6 +8,7 @@ import com.syncvr.fiboapp.database.FiboDao
 import com.syncvr.fiboapp.database.FiboDatabase
 import com.syncvr.fiboapp.database.entities.FiboNumber
 import com.syncvr.fiboapp.database.entities.FiboRequest
+import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -70,4 +71,18 @@ class FiboDaoTest {
         val dbRequest = fiboDao.getRequestByNumber(fiboRequest.fiboNumber)
         assertEquals(dbRequest?.requestDate, fiboRequest.requestDate)
     }
+
+//    @Test
+//    @Throws(Exception::class)
+//    fun testGetJoinedFiboRequestsNumbers() = runBlocking {
+//        fiboDao.addAllFiboNumbers(listOf(
+//            FiboNumber(0,0),
+//            FiboNumber(1,1),
+//            FiboNumber(2,1)
+//        ))
+//        fiboDao.addFiboRequest(FiboRequest(1, Calendar.getInstance().time.toString()))
+//        fiboDao.addFiboRequest(FiboRequest(2, Calendar.getInstance().time.toString()))
+//        val joined = fiboDao.getJoinedFiboRequestsNumbers()
+//        assertEquals(joined.count(),2)
+//    }
 }

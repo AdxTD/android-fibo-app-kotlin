@@ -3,17 +3,13 @@ package com.syncvr.fiboapp.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.syncvr.fiboapp.FiboApplication
-import com.syncvr.fiboapp.database.FiboDao
 import com.syncvr.fiboapp.database.entities.FiboNumber
 import com.syncvr.fiboapp.database.entities.FiboRequest
 import com.syncvr.fiboapp.database.entities.JoinedFiboRequestsNumbers
 import com.syncvr.fiboapp.repository.FiboRepository
-import com.syncvr.fiboapp.ui.log
-import com.syncvr.fiboapp.ui.toast
-import kotlinx.coroutines.Dispatchers
+import com.syncvr.fiboapp.log
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class FiboRequestsViewModel(application: FiboApplication) : ViewModel() {
 

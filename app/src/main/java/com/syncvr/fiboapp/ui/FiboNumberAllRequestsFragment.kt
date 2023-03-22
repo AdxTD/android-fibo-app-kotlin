@@ -17,14 +17,9 @@ import com.syncvr.fiboapp.viewmodels.FiboRequestsViewModel
 import com.syncvr.fiboapp.viewmodels.FiboRequestsViewModelFactory
 import kotlinx.coroutines.launch
 
-class FiboNumberAllRequestsFragment : Fragment() {
+class FiboNumberAllRequestsFragment : BaseFiboFragment() {
     private var _binding: FragmentFiboNumberAllRequestsBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var viewModel: FiboRequestsViewModel
-    private lateinit var recyclerView: RecyclerView
-
-    private var fiboNumberIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +39,6 @@ class FiboNumberAllRequestsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.tvReadyHeader.text = getString(R.string.status_showing_requests_4number,fiboNumberIndex)
-        viewModel = FiboRequestsViewModelFactory(
-            context?.applicationContext as FiboApplication
-        ).create(FiboRequestsViewModel::class.java)
 
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)

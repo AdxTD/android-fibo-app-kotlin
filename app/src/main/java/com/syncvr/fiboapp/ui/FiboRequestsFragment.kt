@@ -12,21 +12,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.syncvr.fiboapp.FiboApplication
 import com.syncvr.fiboapp.database.entities.FiboRequest
 import com.syncvr.fiboapp.databinding.FragmentFiboRequestsBinding
+import com.syncvr.fiboapp.toast
 import com.syncvr.fiboapp.ui.adapters.FiboRequestsAdapter
 import com.syncvr.fiboapp.viewmodels.FiboRequestsViewModel
 import com.syncvr.fiboapp.viewmodels.FiboRequestsViewModelFactory
 import kotlinx.coroutines.launch
 import java.util.*
 
-class FiboRequestsFragment : Fragment() {
+class FiboRequestsFragment : BaseFiboFragment() {
     private var _binding: FragmentFiboRequestsBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var viewModel: FiboRequestsViewModel
-    private lateinit var recyclerView: RecyclerView
-
-    private val maxFiboNumberAllowed = 92
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,9 +37,6 @@ class FiboRequestsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel = FiboRequestsViewModelFactory(
-            context?.applicationContext as FiboApplication
-        ).create(FiboRequestsViewModel::class.java)
 
         binding.btnRequest.setOnClickListener { btnRequestClicked() }
 
@@ -62,7 +54,6 @@ class FiboRequestsFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.getHistory().collect() {
                 adapter.submitList(it)
-                //recyclerView.scrollToPosition(it.size - 1)
             }
         }
     }

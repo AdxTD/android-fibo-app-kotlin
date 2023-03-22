@@ -9,4 +9,6 @@
     <string name="et_hint">Input fibo number here - limit is f(92)</string>
     <string name="btn_request">Request</string>
     <string name="btn_back">BACK</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
