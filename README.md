@@ -10,7 +10,7 @@ This Android app allows a user to request arbitrary numbers in the Fibonacci seq
 * **FiboRequest: id: Int (primary key auto generated), fibo_number (fiboNumber: Int), date (requestDate: String)** - where fibo_number is a foreign key represents the relation between the two tables, as this table holds the requests dates for calculated fibonacci numbers that were saved in the first table
 *  **JoinedFiboRequestsNumbers: fiboNumber: Int, fiboValue : Long, requestDate: String** - it is a model to hold results from inner joining the db two tables, and used for displaying those data in the list of the main screen
 
-_Limitation note:_ long type can save up to the 92th fibonacci number of the sequence, so currently numbers larger than 92 are not allowed to be requested, until some optimisation might be done here
+_Limitation note:_ long type can save up to the 92nd fibonacci number of the sequence, so currently numbers larger than 92 are not allowed to be requested, until some optimisation might be done here
 
 ## App UI/UX
 
@@ -46,4 +46,6 @@ _Limitation note:_ long type can save up to the 92th fibonacci number of the seq
 8- provide turn off log mechanism.    - DONE       
 9- Update the readme file with all improvements    - DONE       
 10- Extend the database storage capabilities.     in-progress          
-11- Create some fragment to represent visually the fibo number through the Fibonacci Spiral for example.         
+11- Create some fragment to represent visually the fibo number through the Fibonacci Spiral for example.        
+12- Add SEARCH functionality, to search for a certain request/requests      
+13- Demonstrate usage of Jetpack compose

@@ -29,7 +29,7 @@ class FiboRequestsViewModel(application: FiboApplication) : ViewModel() {
                 addFiboNumber(FiboNumber(0, 0))
                 addFiboNumber(FiboNumber(1, 1))
                 log("FiboRequestsViewModel fiboNumbers.isEmpty() - ADDED 0+1")
-            } else { // i.e. there're at least two values in the fibo_number table
+            } else { // i.e. there at least two values in the fibo_number table
                 log("FiboRequestsViewModel fiboNumbers NOT Empty")
                 fiboNumbers.let {
                     lastCalculated = it.first().fiboNumber // the id, i.e. last fibo number requested (or 1 = f(1) in case the db is empty)
@@ -55,7 +55,6 @@ class FiboRequestsViewModel(application: FiboApplication) : ViewModel() {
     fun addRequest(request: FiboRequest) = viewModelScope.launch {
         if (request.fiboNumber <= lastCalculated) { // means fibo number had already been calculated
             log("addRequest fiboNumber <= lastCalculated")
-            val fiboRequest = fiboRepository.getRequestByNumber(request.fiboNumber)
             fiboRepository.addFiboRequest(request)
         } else {
             log("addRequest fiboRequest > lastCalculated")
@@ -63,8 +62,7 @@ class FiboRequestsViewModel(application: FiboApplication) : ViewModel() {
             val fiboNumbers = mutableListOf<FiboNumber>()
             while (lastCalculated < request.fiboNumber) { // keep calculating fibos until we reach the requested one
                 val newFiboValue = lastFiboValue + lastMinusOneFiboValue // f(n) = f(n-1) + f(n-2)
-                lastMinusOneFiboValue =
-                    lastFiboValue // now f(n-1) becomes f(n-2) for next iteration
+                lastMinusOneFiboValue = lastFiboValue // now f(n-1) becomes f(n-2) for next iteration
                 lastFiboValue = newFiboValue // and f(n) becomes f(n-1) for next iteration
                 // we increase the calculated number here and then we save to the list
                 fiboNumbers.add(FiboNumber(++lastCalculated, newFiboValue))

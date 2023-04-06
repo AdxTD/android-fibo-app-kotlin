@@ -6,7 +6,7 @@ buildscript {
         nav_version = "2.5.3"
         room_version = '2.5.0'
         lifecycle_version = "2.6.0"
-        gradle_version = "7.4.1"
+        gradle_version = '7.4.2'
         compile_sdk_version = 33
         min_sdk = 21
     }
